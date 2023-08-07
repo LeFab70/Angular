@@ -1,0 +1,68 @@
+<div class="p-3">
+  <div class="card">
+    <div class="card-body">
+      <h3>product component</h3>
+      {{ keysword }}
+      <div class="card-body">
+        <label class="form-label me-1" for="search">Trouver un produit </label>
+        <input
+          (keypress)="handleSearchProduct()"
+          [(ngModel)]="keysword"
+          type="search"
+          name="search"
+          id="search"
+        />
+        <button
+          (click)="handleSearchProduct()"
+          class="btn btn-outline-success ms-1"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+      {{ productsFind | json }}
+      <table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price#$</th>
+            <th>Check</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <!-- <tbody *ngFor="let product of products$ | async"> -->
+        <tbody *ngFor="let product of productsFind">
+          <tr>
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+            <td>
+              {{ product.price | currency : "CAD" : "symbol-narrow" : ".0-2" }}
+            </td>
+            <td>
+              <button
+                (click)="onCheckedProduct(product)"
+                class="btn btn-outline-info"
+              >
+                <i
+                  class="bi"
+                  [ngClass]="{
+                    'bi-check2-circle text-success': product.checked,
+                    'bi-bag-dash text-danger': !product.checked
+                  }"
+                ></i>
+              </button>
+            </td>
+            <td>
+              <button
+                (click)="handleDeleteProduct(product)"
+                class="btn btn-outline-danger"
+              >
+                <i class="bi bi-trash-fill"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

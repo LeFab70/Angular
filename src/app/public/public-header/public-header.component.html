@@ -1,0 +1,28 @@
+<div>
+  Menu public
+
+  <nav class="p-3">
+    <ul class="nav nav-pills">
+      <li *ngFor="let menu of ListMenuPublic">
+        <button
+          (click)="setCurrentMenu(menu)"
+          routerLink="{{ menu.path }}"
+          class="btn btn-outline-success m-1"
+          [ngClass]="{ 'btn-success text-white': currentMenu === menu }"
+        >
+          <i
+            [ngClass]="{ 'text-white': currentMenu === menu }"
+            class="me-1  bi bi-{{ menu.icone }} text-success"
+          ></i
+          >{{ menu.label }}
+        </button>
+      </li>
+      <!-- <li>
+        <button class="btn btn-outline-info ms-1">product</button>
+      </li>
+      <li>
+        <button class="btn btn-outline-info ms-1">new product</button>
+      </li> -->
+    </ul>
+  </nav>
+</div>

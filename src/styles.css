@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import "bootstrap-icons/font/bootstrap-icons.css";
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  color: #282838;
+}
+
+* {
+  box-sizing: border-box;
+}

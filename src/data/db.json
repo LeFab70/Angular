@@ -1,0 +1,22 @@
+{
+  "products": [
+    {
+      "name": "keyboard",
+      "price": 200,
+      "checked": true,
+      "id": 1
+    },
+    {
+      "name": "Mouse",
+      "price": 100,
+      "checked": true,
+      "id": 2
+    },
+    {
+      "name": "laptop",
+      "price": 1200,
+      "checked": true,
+      "id": 3
+    }
+  ]
+}
